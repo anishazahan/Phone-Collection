@@ -16,6 +16,7 @@
 
 </head>
 <body>
+    <!-- ............search button............. -->
 
     <div class="header mx-auto text-center mt-5">
         <h5 class="fw-bold mb-4">Find the phone as you need ! </h5>
@@ -23,24 +24,62 @@
         <div class="">
             <div class="mx-auto input-group w-50">
                 <input id="input-field"  class=" form-control input-field" type="search" placeholder="Search Your Phone" aria-label="Search">
-               <button class=" search-button">Search</button>
+               <button class=" search-button" onclick="searchButton()">Search</button>
               </div>
+        </div>
+        <div class="error">
+            <p id="input-error" class="text-center text-danger my-5"></p>
         </div>
     </div>
 
-    <main class="mx-auto">
-        <div class="container-width">
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="img"></div>
+     <!-- ............search phone results............. -->
+
+    <div class="mx-auto">
+        <div class="container-width mx-auto">
+            <div class="row mt-5" id="show-phones">
+              
+                    <!-- <div class="phone p-4 bg-secondary mb-3 shadow">
+                        <div class="img">img</div>
                     <div class="content">
-                        <div class="phone-name"></div>
-                        <div class="phone-content"></div>
+                        <div class="phone-name">
+                            <h5>hellow</h5>
+                        </div>
+                        <div class="phone-content">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, perspiciatis voluptate facilis rem inventore placeat.</p>
+                        </div>
                     </div>
-                </div>
+                    </div> -->
+               
+                
             </div>
         </div>
-    </main>
+    </div>
+
+
+
+ <!-- ............phone details............. -->
+
+        <div class="phone-details mx-auto ">
+            <div class=" mb-3" id="phone-details">
+                <!-- <div class="row g-0 mx-auto" >
+                  <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+        </div>
+
+
+
+
+    
     
 
 

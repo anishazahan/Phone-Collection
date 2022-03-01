@@ -28,5 +28,22 @@ body{
 /* ...... main-section.... */
 
 .container-width{
-    width: 80%;
+    width: 70%;
 }
+.details-btn{
+    border: none;
+    outline: none;
+    background-color: #3F3351;
+    color: white;
+    font-weight: 600;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+.details-btn:hover{
+    background-color: white;
+    border: 1px solid #3F3351;
+    color: #3F3351;
+}
+
+  
+
