@@ -2,25 +2,29 @@
 // .......adding onclick function in search-button.........
 
 document.getElementById('viewBtn').style.display = "none";
+document.getElementById('spinner').style.display = "none";
+
 const searchButton= () =>{
 
   
     const inputField = document.getElementById('input-field');
     const inputText = inputField.value;
+    inputField.value = '';
+    document.getElementById('spinner').style.display = "block";
     document.getElementById('phone-details').textContent = "";
-    // const inputError = document.getElementById('input-error');
         const url = `https://openapi.programming-hero.com/api/phones?search=${inputText}`
         fetch (url)
         .then(res => res.json())
         .then(data =>loadingPhones(data.data));
-        // inputError.innerText = "";
+       
 }
 
 
 // .......load phone collection.........
 
 const loadingPhones = (phones) => {
-    // console.log(phones);
+
+  
     const phoneResults = document.getElementById('show-phones');
     phoneResults.textContent = '';
 
@@ -53,13 +57,13 @@ const loadingPhones = (phones) => {
       });
       document.getElementById('input-error').innerText ="";
       document.getElementById('viewBtn').style.display ="block"
+      document.getElementById('spinner').style.display = "none";
        
     }
 
     document.getElementById('viewBtn').addEventListener('click',function(){
       phones.slice(21,phones.length).forEach(phone => {
-        
-        console.log(phone.slug);
+      
         const div = document.createElement('div');
         div.classList.add('col-lg-4');
         div.classList.add('col-md-6');
@@ -91,7 +95,7 @@ const loadingPhones = (phones) => {
 // .......load phone details.........
 
 const phoneDetails = (idDetails) =>{
-    // console.log(idDetails);
+    
     const url =  `https://openapi.programming-hero.com/api/phone/${idDetails}`
     fetch (url)
     .then(res => res.json())
