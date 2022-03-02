@@ -30,47 +30,40 @@ body{
 .container-width{
     width: 60%;
 }
-.container-width-details{
-    position: fixed;
-    width: 50%;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-   display: none;
-}
+
 .phone-name{
     color: #3F3351;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 20px;
 
 }
 .phone-brand{
     font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-.dismiss-btn-parent{
-    text-align: right;
+.card-details{
+    padding: 20px;
+    padding-left: 20px;
 }
-
-.dismiss-btn{
-    border: none;
-    background: none;
-    font-size: 30px;
-    font-weight: 400;
-    color: #3F3351;
-    margin-top: -30px;
+.card-details img{
     
+    width: 200px;
 }
+.feature{
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .details-btn{
     border: none;
@@ -91,12 +84,7 @@ body{
     width: 100%;
     height: auto;
 }
-.feature{
-    margin: 0;
-    font-size: 14px;
-    margin: 5px 0!important;
-    margin-left: 10px!important;
-}
+
 
   
 
