@@ -1,9 +1,10 @@
 
 // .......adding onclick function in search-button.........
 
-
+document.getElementById('viewBtn').style.display = "none";
 const searchButton= () =>{
 
+  
     const inputField = document.getElementById('input-field');
     const inputText = inputField.value;
     document.getElementById('phone-details').textContent = "";
@@ -12,10 +13,7 @@ const searchButton= () =>{
         fetch (url)
         .then(res => res.json())
         .then(data =>loadingPhones(data.data));
-   
         // inputError.innerText = "";
-    
-    
 }
 
 
@@ -31,8 +29,9 @@ const loadingPhones = (phones) => {
        
     }else{
       
-      for(const phone of phones){
-        // console.log(phone.slug);
+      phones.slice(0,20).forEach(phone => {
+        
+        console.log(phone.slug);
         const div = document.createElement('div');
         div.classList.add('col-lg-4');
         div.classList.add('col-md-6');
@@ -50,10 +49,40 @@ const loadingPhones = (phones) => {
                 </div>
                 </div>`
                 phoneResults.appendChild(div);
-                document.getElementById('input-error').innerText ="";
+               
+      });
+      document.getElementById('input-error').innerText ="";
+      document.getElementById('viewBtn').style.display ="block"
+       
     }
 
-    }
+    document.getElementById('viewBtn').addEventListener('click',function(){
+      phones.slice(21,phones.length).forEach(phone => {
+        
+        console.log(phone.slug);
+        const div = document.createElement('div');
+        div.classList.add('col-lg-4');
+        div.classList.add('col-md-6');
+        div.innerHTML = ` <div class="phone p-4 border mb-3 shadow">
+                <div class="img">
+                <img src = "${phone.image}"></div>
+                 <div class="content">
+                <div>
+                    <h5  class="phone-name my-2">${phone.phone_name}</h5>
+                </div>
+                <div>
+                    <p  class="phone-brand">Brand:${phone.brand}</p>
+                </div>
+                <button class = "details-btn" onclick = "phoneDetails('${phone.slug}')">Show Details</button>
+                </div>
+                </div>`
+                phoneResults.appendChild(div);
+               
+      });
+
+    })
+
+   
    
 
 
