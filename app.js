@@ -30,6 +30,8 @@ const loadingPhones = (phones) => {
 
     if( phones.length === 0){
       document.getElementById('input-error').innerText ="No result found"
+      document.getElementById('viewBtn').style.display ="none"
+      document.getElementById('spinner').style.display = "none";
        
     }else{
       
