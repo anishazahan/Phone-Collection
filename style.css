@@ -28,8 +28,50 @@ body{
 /* ...... main-section.... */
 
 .container-width{
-    width: 70%;
+    width: 60%;
 }
+.container-width-details{
+    position: fixed;
+    width: 50%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+   display: none;
+}
+.phone-name{
+    color: #3F3351;
+    font-weight: 700;
+    font-size: 19px;
+
+}
+.phone-brand{
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+.dismiss-btn-parent{
+    text-align: right;
+}
+
+.dismiss-btn{
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: 400;
+    color: #3F3351;
+    margin-top: -30px;
+    
+}
+
 .details-btn{
     border: none;
     outline: none;
@@ -43,6 +85,17 @@ body{
     background-color: white;
     border: 1px solid #3F3351;
     color: #3F3351;
+    overflow: hidden;
+}
+.details-img{
+    width: 100%;
+    height: auto;
+}
+.feature{
+    margin: 0;
+    font-size: 14px;
+    margin: 5px 0!important;
+    margin-left: 10px!important;
 }
 
   

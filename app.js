@@ -39,15 +39,15 @@ const loadingPhones = (phones) => {
         // console.log(phone.slug);
         const div = document.createElement('div');
         div.classList.add('col-lg-4');
-        div.innerHTML = ` <div class="phone p-4 bg-secondary mb-3 shadow">
+        div.innerHTML = ` <div class="phone p-4 border mb-3 shadow">
                 <div class="img">
                 <img src = "${phone.image}"></div>
                  <div class="content">
-                <div class="phone-name">
-                    <h5>${phone.phone_name}</h5>
+                <div>
+                    <h5  class="phone-name my-2">${phone.phone_name}</h5>
                 </div>
-                <div class="phone-content">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, perspiciatis voluptate facilis rem inventore placeat.</p>
+                <div>
+                    <p  class="phone-brand">Brand:${phone.brand}</p>
                 </div>
                 <button class = "details-btn" onclick = "phoneDetails('${phone.slug}')">Show Details</button>
                 </div>
@@ -68,23 +68,54 @@ const phoneDetails = (idDetails) =>{
     .then(data => showIdPhoneDetails(data.data))
   }
   
+
+  // .......show phone details.........
+
+
+  // const detailsContainer = document.getElementById('phone-details').style.display = 'none';
   const showIdPhoneDetails = phone =>{
-    console.log(phone);
+    // console.log(phone);
     const phoneDetails = document.getElementById('phone-details');
-    phoneDetails.textContent ='';
+    // phoneDetails.textContent ='';
     const div = document.createElement('div');
   
-    div.innerHTML =`<div class="row g-0 mx-auto" >
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>`
+    div.innerHTML =` <div class="dismiss-btn-parent mt-0">
+                <button class="dismiss-btn" id="dismiss">x</button>
+            </div>
+            <div class="row" >
+              <div class="col-md-4">
+                  
+                <img src="${phone.image}" class="img-fluid rounded-start details-img" alt="...">
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                  <h5 class="phone-name">${phone.name}</h5>
+                  <p  class="phone-brand">Brand:${phone.brand}</p>
+                  <h5 class="feature-tittle">MainFeatures</h5>
+                  <div class="top-features">
+                    <p class="feature">ReleaseDate:${phone.releaseDate}</p>
+                    <p class="feature">DisplaySize:</p>
+                    <p class="feature">ChipSet:</p>
+                    <p class="feature">memory:</p>
+                    <p class="feature">Sensors:</p>
+                    <p class="feature">()</p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="other-features">
+                <h5 class="feature-tittle">Other Features</h5>
+                <div class="top-features">
+                    <p class="feature">WLAN:</p>
+                    <p class="feature">Bluetooth:</p>
+                    <p class="feature">GPS:</p>
+                    <p class="feature">NFC:</p>
+                    <p class="feature">Radio:</p>
+                    <p class="feature">USB:</p>
+                    
+                  </div>
+
+            </div>`
      phoneDetails.appendChild(div);
   }
